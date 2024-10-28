@@ -25,14 +25,14 @@ Below some of plugins are use in this project, But its not all use in this app, 
    ```sh
     npx gluestack-ui init
    ```
-2. Instal any Component gluestack-ui, like 
+3. Instal any Component gluestack-ui, like 
 
    ```sh
     npx gluestack-ui add box
     npx gluestack-ui add button
     etc..
    ```
-3. Run Project
+4. Run Project
 
    ```sh
     npx expo start
@@ -41,9 +41,9 @@ Below some of plugins are use in this project, But its not all use in this app, 
     npx expo run:ios
    ```
 
-4. Install **Tailwind CSS IntelliSense** in vscode, also install **gluestack** plugins
+5. Install **Tailwind CSS IntelliSense** in vscode, also install **gluestack** plugins
 
-5. Edit **settings.json** in vscode by command+shift+p , then type **preferences** in the box search. **sometime you can skip this** in these step its works
+6. Edit **settings.json** in vscode by command+shift+p , then type **preferences** in the box search. **sometime you can skip this** in these step its works
 
 ```sh
   {
@@ -52,7 +52,7 @@ Below some of plugins are use in this project, But its not all use in this app, 
     ]
   }
    ```
-6. We can Use **Component Snippets** with keyword **gs-** and then followed by the name of the desired component . like below:
+7. We can Use **Component Snippets** with keyword **gs-** and then followed by the name of the desired component . like below:
 
    ![Snippet in gluestack ui](./assets/snippet.png)
 
