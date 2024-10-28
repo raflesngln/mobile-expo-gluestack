@@ -25,16 +25,25 @@ Below some of plugins are use in this project, But its not all use in this app, 
    ```sh
     npx gluestack-ui init
    ```
-2. Instal Component gluestack, like 
+2. Instal any Component gluestack-ui, like 
 
    ```sh
     npx gluestack-ui add box
     npx gluestack-ui add button
+    etc..
    ```
-2. Install **Tailwind CSS IntelliSense** in vscode, also install **gluestack** plugins
+3. Run Project
 
-2. Edit **settings.json** in vscode by command+shift+p , then type **preferences** in the box search
+   ```sh
+    npx expo start
+            OR
+    npx expo run:android
+    npx expo run:ios
+   ```
 
+4. Install **Tailwind CSS IntelliSense** in vscode, also install **gluestack** plugins
+
+5. Edit **settings.json** in vscode by command+shift+p , then type **preferences** in the box search. **sometime you can skip this** in these step its works
 
 ```sh
   {
@@ -43,17 +52,18 @@ Below some of plugins are use in this project, But its not all use in this app, 
     ]
   }
    ```
-3. WE can Use **Component Snippets** with keyword **gs-** and then followed by the name of the desired component . like below:
+3. We can Use **Component Snippets** with keyword **gs-** and then followed by the name of the desired component . like below:
 
-   ![alt text](./assets/snippet.png)
+   ![Snippet in gluestack ui](./assets/snippet.png)
 
 
 
 
 ## BUILD APP
-
+>
+>
 ## Build app ready for upload to playstore
-- Instasl eas in computer
+- Install **eas** in computer
 ```sh
    npm install -g eas-cli
 ```
@@ -74,8 +84,10 @@ npx expo run:android
 npx expo run:ios
 ```
 
->
-> If We want to rebuild and change a major fresh , then use **--clean** flag
+> 
+> 
+> If we have a minor change just run **npx expo prebuild**, 
+> but If We want to rebuild and change a major fresh , then use **--clean** flag
 
 ```sh
 npx expo prebuild --clean
@@ -84,20 +96,21 @@ npx expo run:android --clean
       or
 npx expo run:ios --clean
 ```
-
-Then we have to build manual its native app by :
-```sh
+> 
+> Then we have to build manual its native app by :
 
 1. Build the **Android** APK DEBUG :
-    ```
+
+```sh 
       cd android
       ./gradlew clean
       ./gradlew assembleDebug
+   ```
 2. Build the **Android** APK Release :
+```sh
     cd android
     ./gradlew clean
     ./gradlew assembleRelease
-
 ```
 
 
