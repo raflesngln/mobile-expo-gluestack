@@ -21,7 +21,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npx gluestack-ui add box
     npx gluestack-ui add box
    ```
-2. Install **Tailwind CSS IntelliSense** in vscode
+2. Install **Tailwind CSS IntelliSense** in vscode, also install **gluestack** plugins
 
 2. Edit **settings.json** in vscode by command+shift+p , then type **preferences**
 
@@ -32,28 +32,42 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     ]
   }
    ```
+3. WE can Use **Component Snippets** with keyword **gs-**. 
 
 
-## Build Apk
+## BUILD APP
 
 ## Build app ready for upload to playstore
 - Instasl eas in computer
 ```sh
    npm install -g eas-cli
 ```
-- Build app with aab file
+- Build app with aab file. It will rebuild .aab file in expo dashboard for android
 ```sh
    eas build --platform android
             OR
    eas build --platform ios
 ```
 
-## Generate android Native folder for project
-a native build locally by running command below, It will generate folder **android** and **ios** for native app:
+## Generate App Native folder for project
+A native build locally by running command below, It will generate folder **android** and **ios** for native app:
 ```sh
+npx expo prebuild
+      OR
 npx expo run:android
       or
 npx expo run:ios
+```
+
+>
+> If We want to rebuild and change a major fresh , then use **--clean** flag
+
+```sh
+npx expo prebuild --clean
+      OR
+npx expo run:android --clean
+      or
+npx expo run:ios --clean
 ```
 
 Then we have to build manual its native app by :
