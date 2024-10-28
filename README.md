@@ -62,8 +62,7 @@ Below some of plugins are use in this project, But its not all use in this app, 
 <br> 
 
 >
->
-## Build app ready for upload to playstore
+### Build app ready for upload to playstore
 - Install **eas** in computer
 ```sh
    npm install -g eas-cli
@@ -75,7 +74,7 @@ Below some of plugins are use in this project, But its not all use in this app, 
    eas build --platform ios
 ```
 
-## Generate App Native folder for project
+### Generate App Native folder for project
 A native build locally by running command below, It will generate folder **android** and **ios** for native app:
 ```sh
 npx expo prebuild
@@ -117,11 +116,11 @@ npx expo run:ios --clean
 
 
 <br> <br> <br>
+
 ## ROUTER IN NAVIGATION EXPO
 <br>
 
 ### Setup entry point
-
 > For the property main, use the expo-router/entry as its value in the **package.json**. 
 > The initial client file is **app/_layout.js** directory
 
@@ -220,8 +219,10 @@ When a file is created in the **app** directory, it **automatically** becomes a 
 ```
 
 
+<br> <br> <br>
 
-## TIPS and TRIK
+## TIPS & TRIK
+>
 
 ### Ignore warning error in ESlint Typescript like className or etc.
 1.  create directory **types** in root of project.the create file file **declarations.d.ts** and set this code :
