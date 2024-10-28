@@ -57,8 +57,8 @@ Below some of plugins are use in this project, But its not all use in this app, 
    ![Snippet in gluestack ui](./assets/snippet.png)
 
 
-[Two blank lines here]
-
+<br>
+<br>
 ## BUILD APP
 >
 >
@@ -114,8 +114,8 @@ npx expo run:ios --clean
 ```
 
 
-
-
+<br>
+<br>
 ## Router Navigation In EXPO
 
 ### Setup entry point
