@@ -43,7 +43,11 @@ Below some of plugins are use in this project, But its not all use in this app, 
     ]
   }
    ```
-3. WE can Use **Component Snippets** with keyword **gs-**. 
+3. WE can Use **Component Snippets** with keyword **gs-** and then followed by the name of the desired component . like below:
+
+```sh
+   ![alt text](./assets/snippet.png)
+```
 
 
 
