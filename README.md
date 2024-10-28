@@ -57,7 +57,7 @@ Below some of plugins are use in this project, But its not all use in this app, 
    ![Snippet in gluestack ui](./assets/snippet.png)
 
 
-
+[Two blank lines here]
 
 ## BUILD APP
 >
@@ -120,7 +120,8 @@ npx expo run:ios --clean
 
 ### Setup entry point
 
-    For the property main, use the expo-router/entry as its value in the **package.json**. The initial client file is **app/_layout.js**.
+> For the property main, use the expo-router/entry as its value in the **package.json**. 
+> The initial client file is **app/_layout.js** directory
 
 ```sh
       {
