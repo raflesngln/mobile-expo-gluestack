@@ -33,9 +33,10 @@ Below some of plugins are use in this project, But its not all use in this app, 
    ```
 2. Install **Tailwind CSS IntelliSense** in vscode, also install **gluestack** plugins
 
-2. Edit **settings.json** in vscode by command+shift+p , then type **preferences**
+2. Edit **settings.json** in vscode by command+shift+p , then type **preferences** in the box search
 
-   ```sh
+
+```sh
   {
     "tailwindCSS.experimental.classRegex": [
       ["tva\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
