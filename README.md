@@ -132,11 +132,14 @@ npx expo run:ios --clean
 ```
 
 ### Create pages with Expo Router
-When a file is created in the **app** directory, it **automatically** becomes a route . For example, the following files will create the following routes:
+When a file or Directory is created in the **app** directory, it **automatically** becomes a route . For example, the following files will create the following routes:
 
-![expo router.](/assets/docs/route-expo.png "Router in Expo")
+![expo router.](./assets/images/expo-structure.png "Router in Expo")
+
+Depends on above structure, the file or folder inside of app directory would be a route.
 
 
+<br/>
 
 > Expo navigation consist of **\_layout.tsx** for manage navigation.
 > Root navigation is located in app folder
