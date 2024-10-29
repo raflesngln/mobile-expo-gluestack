@@ -6,7 +6,6 @@ import {
   Platform,
   SafeAreaView,
   TextInput,
-  Button,
 } from "react-native";
 
 import { Collapsible } from "@/components/Collapsible";
@@ -16,6 +15,8 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useEffect, useState } from "react";
 import { useNavigation } from "expo-router";
+import { Center } from "@/components/ui/center";
+import { Button, ButtonText } from "@/components/ui/button";
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -63,21 +64,25 @@ export default function SignIn() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">REGISTER NEW USER</ThemedText>
       </ThemedView>
-      <ThemedText>Please Register below</ThemedText>
+      <ThemedText className=" text-center">Please Register below</ThemedText>
 
       <SafeAreaView>
-        {loading && (
-          <Text className="text-center font-bold text-blue-600 text-xl">
-            Processing...
-          </Text>
-        )}
+        <Center>
+          {loading && (
+            <Text className="text-center font-bold text-blue-600 text-xl">
+              Processing...
+            </Text>
+          )}
+        </Center>
         <TextInput
+          className=" rounded-xl border-gray-400 "
           data-name="username"
           style={styles.input}
           onChangeText={(e) => handlerInput("username", e)}
           value={formData.username}
         />
         <TextInput
+          className=" rounded-xl border-gray-400 "
           style={styles.input}
           data-name="password"
           //   name="password"
@@ -86,12 +91,16 @@ export default function SignIn() {
           placeholder="useless placeholder"
           keyboardType="numeric"
         />
+
         <Button
+          size="lg"
+          variant="solid"
+          action="primary"
+          className=" bg-teal-600 rounded-2xl px-10 "
           onPress={processRegister}
-          title="Register New"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        >
+          <ButtonText>Register Now</ButtonText>
+        </Button>
       </SafeAreaView>
     </ParallaxScrollView>
   );

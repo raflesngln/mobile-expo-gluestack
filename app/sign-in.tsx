@@ -6,7 +6,6 @@ import {
   Platform,
   SafeAreaView,
   TextInput,
-  Button,
 } from "react-native";
 
 import { Collapsible } from "@/components/Collapsible";
@@ -16,6 +15,8 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useEffect, useState } from "react";
 import { useNavigation } from "expo-router";
+import { Button, ButtonText } from "@/components/ui/button";
+import { Center } from "@/components/ui/center";
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -61,29 +62,35 @@ export default function SignIn() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title" className="text-blue-600">
-          SIGN-IN
+        <ThemedText type="title">
+          <Text className=" text-blue-600"> SIGN-IN</Text>
         </ThemedText>
       </ThemedView>
-      <ThemedText style={styles.titleContainer} className="text-gray-400">
+      <ThemedText
+        style={styles.titleContainer}
+        className="text-gray-400 text-center"
+      >
         Please Sign-In below
       </ThemedText>
 
       <SafeAreaView>
-        {loading && (
-          <Text className="text-center font-bold text-blue-600 text-xl">
-            Processing...
-          </Text>
-        )}
-
+        <Center>
+          {loading && (
+            <Text className="text-center font-bold text-blue-600 text-xl">
+              Processing...
+            </Text>
+          )}
+        </Center>
         <TextInput
           data-name="username"
           style={styles.input}
+          className=" rounded-xl border-gray-400 "
           onChangeText={(e) => handlerInput("username", e)}
           value={formData.username}
         />
         <TextInput
           style={styles.input}
+          className=" rounded-xl border-gray-400 "
           data-name="password"
           //   name="password"
           onChangeText={(e) => handlerInput("password", e)}
@@ -91,15 +98,16 @@ export default function SignIn() {
           placeholder="useless placeholder"
           keyboardType="numeric"
         />
+
         <Button
+          size="lg"
+          variant="solid"
+          action="primary"
+          className="bg-red-600 rounded-2xl px-10 "
           onPress={processLogin}
-          className="bg-red-700 text-gray-300"
-          title="LOGIN"
-        //   color="#000"
-        />
-        {/* <Button onPress={processLogin}>
-          <Text>adasdasd</Text>
-        </Button> */}
+        >
+          <ButtonText>SIGN-IN</ButtonText>
+        </Button>
       </SafeAreaView>
     </ParallaxScrollView>
   );
