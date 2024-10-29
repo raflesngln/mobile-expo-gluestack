@@ -34,7 +34,7 @@ export default function TabTwoScreen() {
         <Link href="/sign-in">Goto LOGIN</Link>
       </ThemedText>
       <ThemedText>
-        <Link href="/register">Goto REGISTER</Link>
+        <Link href="/register">REGISTER New</Link>
       </ThemedText>
 
       <Link href="/(tabs)" asChild>

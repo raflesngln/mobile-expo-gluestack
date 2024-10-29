@@ -7,7 +7,7 @@ Below some of plugins are use in this project, But its not all use in this app, 
 
 | Plugin           | README                                                                                                               |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- |
-| gluestack       | [https://gluestack.io/ui/docs/home/overview/introduction] is uses for template and components UI layouts       |
+| gluestack-ui       | [https://gluestack.io/ui/docs/home/overview/introduction] is uses for template and components UI layouts       |
 | tailwind-rn       | [https://www.npmjs.com/package/tailwind-rn/v/3.0.1] is uses Tailwind CSS as scripting language to create a universal styling system |
 | nativewind       | [https://www.nativewind.dev/overview/] is uses Tailwind CSS as scripting language to create a universal styling system |
 | Ionicons         | [https://iconduck.com/sets/ionicons] Icon of apps                                                                    |
