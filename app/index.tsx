@@ -14,10 +14,21 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { Button } from "@/components/ui/button";
+
+import {useColorsMode} from "@/hooks/useColorsMode";
 
 
 export default function TabTwoScreen() {
-    const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme();
+  const colorMode = useColorsMode();
+  // const colorMode = useColorMode(
+  //   {
+  //     light: 'lightColor',
+  //     dark: 'darkColor',
+  //   },
+  //   'text' // or another valid colorName
+  // );
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
@@ -39,10 +50,14 @@ export default function TabTwoScreen() {
 
       <Link href="/(tabs)" asChild>
         <TouchableOpacity>
-          <Text>Goto Home</Text>
+          <ThemedText>Goto Home</ThemedText>
         </TouchableOpacity>
       </Link>
-      <Text>MODE : {JSON.stringify(colorScheme)}</Text>
+      <ThemedText>MODE : {JSON.stringify(colorScheme)}</ThemedText>
+      <ThemedText>colorMode : {JSON.stringify(colorMode)}</ThemedText>
+      <Button className=" bg-red-500 dark:bg-teal-500">
+        <Text style={{color:colorMode.text}}>HELLOO</Text>
+      </Button>
     </ParallaxScrollView>
   );
 }

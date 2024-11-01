@@ -5,7 +5,7 @@ export default function Detail() {
     <View className="flex-1 items-center justify-center">
       <Text className="text-3xl font-bold mb-[30px]">DETAIL Produk</Text>
       <View>
-        <Text className="text-red-500">
+        <Text className=" text-wrap">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
           tenetur ea commodi laborum perferendis placeat cumque voluptatibus,
           autem laudantium accusamus recusandae eveniet accusantium quaerat

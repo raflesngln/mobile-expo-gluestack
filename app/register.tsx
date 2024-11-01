@@ -23,8 +23,8 @@ export default function SignIn() {
   const [loading, setLoading] = useState<boolean>(true);
 
   const [formData, setFormData] = useState({
-    username: "raflesngln@gmail.com",
-    password: "123456",
+    username: "",
+    password: "",
   });
 
   const handlerInput = (name: any, e: any) => {
@@ -75,20 +75,21 @@ export default function SignIn() {
           )}
         </Center>
         <TextInput
-          className=" rounded-xl border-gray-400 "
+           className=" rounded-xl border-gray-400 focus:border-blue-500 "
           data-name="username"
           style={styles.input}
           onChangeText={(e) => handlerInput("username", e)}
+          placeholder="username or email"
           value={formData.username}
         />
         <TextInput
-          className=" rounded-xl border-gray-400 "
+           className=" rounded-xl border-gray-400 focus:border-blue-500 "
           style={styles.input}
           data-name="password"
           //   name="password"
           onChangeText={(e) => handlerInput("password", e)}
           value={formData.password}
-          placeholder="useless placeholder"
+          placeholder="password"
           keyboardType="numeric"
         />
 
@@ -96,7 +97,7 @@ export default function SignIn() {
           size="lg"
           variant="solid"
           action="primary"
-          className=" bg-teal-600 rounded-2xl px-10 "
+          className=" bg-teal-600 rounded-2xl px-10 mt-9 "
           onPress={processRegister}
         >
           <ButtonText>Register Now</ButtonText>

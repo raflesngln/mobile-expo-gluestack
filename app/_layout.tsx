@@ -46,9 +46,14 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const ModeUI = "dark";
   return (
-    <GluestackUIProvider mode="light">
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <GluestackUIProvider mode={ModeUI}>
+      {/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
+      <ThemeProvider value={ModeUI === "dark" ? DarkTheme : DefaultTheme}>
+        <Text style={{ marginTop: 30, marginLeft: 20, marginBottom: 20 }}>
+          {JSON.stringify(colorScheme)}
+        </Text>
         {/* <Layout> */}
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
