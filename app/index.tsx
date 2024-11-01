@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   StyleSheet,
@@ -16,19 +17,31 @@ import { ThemedView } from "@/components/ThemedView";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Button } from "@/components/ui/button";
 
-import {useColorsMode} from "@/hooks/useColorsMode";
-
+import { useColorsMode } from "@/hooks/useColorsMode";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function TabTwoScreen() {
   const colorScheme = useColorScheme();
   const colorMode = useColorsMode();
-  // const colorMode = useColorMode(
-  //   {
-  //     light: 'lightColor',
-  //     dark: 'darkColor',
-  //   },
-  //   'text' // or another valid colorName
-  // );
+  const [datalogin, setDatalogin] = useState<any>();
+
+  const getDataLogin = async () => {
+    try {
+      const valueLogin = await AsyncStorage.getItem('dataLogin');
+      if (valueLogin !== null) {
+        const dataLoginObject = JSON.parse(valueLogin);
+      setDatalogin(dataLoginObject);
+      }
+    } catch (e) {
+      // error reading value
+      setDatalogin("");
+    }
+  };
+
+  useEffect(() => {
+    getDataLogin();
+  }, []);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
@@ -41,6 +54,9 @@ export default function TabTwoScreen() {
       </ThemedView>
       <ThemedText>This the first routes is run.</ThemedText>
 
+      <ThemedText>
+        <Link href="/sign-in">LOCALSTORAGEss {JSON.stringify(datalogin?.email)} asad</Link>
+      </ThemedText>
       <ThemedText>
         <Link href="/sign-in">Goto LOGIN</Link>
       </ThemedText>
@@ -56,7 +72,7 @@ export default function TabTwoScreen() {
       <ThemedText>MODE : {JSON.stringify(colorScheme)}</ThemedText>
       <ThemedText>colorMode : {JSON.stringify(colorMode)}</ThemedText>
       <Button className=" bg-red-500 dark:bg-teal-500">
-        <Text style={{color:colorMode.text}}>HELLOO</Text>
+        <Text style={{ color: colorMode.text }}>HELLOO</Text>
       </Button>
     </ParallaxScrollView>
   );
