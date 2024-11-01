@@ -225,6 +225,102 @@ Depends on above structure, the file or folder inside of app directory would be 
 
 <br> <br> <br>
 
+
+## Use Darkmode in Project With Localstorage My Version
+
+1. Instal asynstorage Plugins in expo
+```sh
+    npx expo install @react-native-async-storage/async-storage
+```
+
+2. Creat react Hooks with name **useColorsMode.ts**
+
+```sh
+    // hooks/useColorsMode.tsx
+
+    import { useColorScheme } from "@/hooks/useColorScheme";
+    import { Colors } from "@/constants/Colors";
+
+    export function useColorsMode() {
+      const colorScheme = useColorScheme();
+      const text = colorScheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+      if (colorScheme=="dark") {
+        return {
+          text:Colors.dark.text,
+          background:Colors.dark.background,
+          tint:Colors.dark.tint,
+          icon:Colors.dark.icon,
+          tabIconDefault:Colors.dark.tabIconDefault,
+          tabIconSelected:Colors.dark.tabIconSelected,
+        };
+      } else {
+        return {
+          text:Colors.light.text,
+          background:Colors.light.background,
+          tint:Colors.light.tint,
+          icon:Colors.light.icon,
+          tabIconDefault:Colors.light.tabIconDefault,
+          tabIconSelected:Colors.light.tabIconSelected,
+        };
+      }
+    }
+```
+
+3. Apply in Layout look like below :
+
+```sh
+    // app/_layout.tsx
+
+      function RootLayoutNav() {
+        const colorScheme = useColorScheme();
+        const [datalogin, setDatalogin] = useState<any>();
+        
+        const getDataLogin = async () => {
+          try {
+            const valueLogin = await AsyncStorage.getItem('dataLogin');
+            if (valueLogin !== null) {
+              const dataLoginObject = JSON.parse(valueLogin);
+              setDatalogin(dataLoginObject);
+            }
+          } catch (e) {
+            setDatalogin("");
+          }
+        };
+        
+        useEffect(() => {
+          setTimeout(() => {
+            getDataLogin()
+          }, 300);
+      
+        }, []);
+        return (
+          <GluestackUIProvider mode={datalogin?.UImode}>
+            <ThemeProvider value={datalogin?.UImode === "dark" ? DarkTheme : DefaultTheme}>
+              <Stack>
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen name="+not-found" />
+                <Stack.Screen name="profile" options={{ headerShown: false }} />
+            </ThemeProvider>
+          </GluestackUIProvider>
+        );
+      }
+```
+4. Now we can use color dark mode in any Component screen like :
+
+```sh
+    import { useColorsMode } from "@/hooks/useColorsMode";
+    export default function ProfilScreen() {
+          const colorMode = useColorsMode();
+          return (
+            <Text style={{ color: colorMode.text }}>TEST DARK MODE</Text>
+      );
+  }
+```
+
+
+
+<br> <br> <br>
+
 ## TIPS & TRIK
 >
 

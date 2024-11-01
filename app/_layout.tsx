@@ -68,9 +68,7 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const [datalogin, setDatalogin] = useState<any>();
-
-
-
+  
   const getDataLogin = async () => {
     try {
       const valueLogin = await AsyncStorage.getItem('dataLogin');
