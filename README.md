@@ -275,6 +275,23 @@ Depends on above structure, the file or folder inside of app directory would be 
         const colorScheme = useColorScheme();
         const [datalogin, setDatalogin] = useState<any>();
         
+          const setDataLocalStorage = async () => {
+              let dataLogin = {
+                UImode: "dark",
+                token: "90242934",
+                isLogin: true,
+                email: "raflesnglN@gmail.com",
+                name: "rafles",
+              };
+              const dataLoginString = JSON.stringify(dataLogin);
+              try {
+                await AsyncStorage.setItem("dataLogin", dataLoginString as never);
+              } catch (e) {
+                // saving error
+                await AsyncStorage.setItem("dataLogin", '');
+              }
+            };
+
         const getDataLogin = async () => {
           try {
             const valueLogin = await AsyncStorage.getItem('dataLogin');
@@ -288,6 +305,7 @@ Depends on above structure, the file or folder inside of app directory would be 
         };
         
         useEffect(() => {
+          setDataLocalStorage()
           setTimeout(() => {
             getDataLogin()
           }, 300);
