@@ -48,14 +48,6 @@ function App() {
     return null;
   }
   return <RootLayoutNav />;
-  // return (
-  //   <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-  //     <Stack>
-  //       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-  //       <Stack.Screen name="+not-found" />
-  //     </Stack>
-  //   </ThemeProvider>
-  // );
 }
 
 function RootLayoutNav() {
@@ -71,7 +63,6 @@ function RootLayoutNav() {
     // <GluestackUIProvider mode={datalogin?.UImode}>
     <GluestackUIProvider mode={reduxDarkMode}>
       {/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
-      {/* <Provider store={store}> */}
       <ThemeProvider value={reduxDarkMode === "dark" ? DarkTheme : DefaultTheme}>
         {/* <Text style={{ marginTop: 30, marginLeft: 20, marginBottom: 20 }}>
           GetUIMode: {JSON.stringify(reduxDarkMode)}
@@ -94,7 +85,6 @@ function RootLayoutNav() {
           {/* <ProductNavigator /> */}
         </Stack>
       </ThemeProvider>
-      {/* </Provider> */}
     </GluestackUIProvider>
   );
 }
