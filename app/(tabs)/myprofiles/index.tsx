@@ -5,11 +5,12 @@ import {useAppDispatch, useAppSelector} from '@/redux/hooks';
 import {changeDarkMode} from '@/redux/apps/LoginSlice';
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState } from "react";
 
 export default function Modal() {
   const navigation = useNavigation();
   const dataLogin = useAppSelector((state) => state.login);
-
+  const[layoutmode,setLayoutmode]=useState<any>('')
   const dispatch = useAppDispatch();
 
 
@@ -35,6 +36,7 @@ export default function Modal() {
       console.error("Failed to update darkMode:", error);
     }
   };
+  
   const changeLightModeLayout = async () => {
     dispatch(changeDarkMode('light'));
     try {
@@ -57,8 +59,8 @@ LOREM SJS
         <Button title="History" onPress={openHistory} />
         <Button title="changePassword" onPress={changePassword} />
         <Button title="changePhoto" onPress={changePhotoScreen} />
-        <Button title="darkMode" onPress={changeDarkModeLayout} />
-        <Button title="LightMode" onPress={changeLightModeLayout} />
+        <Button title="TO DARK" onPress={changeDarkModeLayout} />
+        <Button title="To LIGHT" onPress={changeLightModeLayout} />
         <ThemedText>
           <Link href="/sign-in">LOG OUT</Link>
         </ThemedText>

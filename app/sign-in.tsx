@@ -52,13 +52,13 @@ export default function SignIn() {
     setTimeout(() => {
       setLoading(false);
       navigation.navigate("(tabs)" as never);
-    }, 1000);
+    }, 300);
   };
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 300);
   }, []);
   return (
     // <View className=" bg-red-300">
